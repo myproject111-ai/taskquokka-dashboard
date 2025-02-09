@@ -2,12 +2,14 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useLocation, Link } from 'react-router-dom';
-import { Home, List, User, MessageCircle, LogOut } from 'lucide-react';
+import { Home, List, Calendar, BookOpen, User, MessageCircle, LogOut } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const sidebarItems = [
   { icon: Home, label: 'Dashboard', path: '/dashboard' },
-  { icon: List, label: 'Tasks', path: '/tasks' },
+  { icon: List, label: 'To-Do List', path: '/todo' },
+  { icon: Calendar, label: 'Timetable', path: '/timetable' },
+  { icon: BookOpen, label: 'Quiz', path: '/quiz' },
   { icon: User, label: 'Profile', path: '/profile' },
 ];
 
@@ -49,10 +51,13 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           </div>
         </div>
         <div className="absolute bottom-0 w-full p-6">
-          <button className="flex items-center space-x-3 px-4 py-3 w-full rounded-lg hover:bg-gray-100 transition-colors">
+          <Link
+            to="/login"
+            className="flex items-center space-x-3 px-4 py-3 w-full rounded-lg hover:bg-gray-100 transition-colors"
+          >
             <LogOut className="w-5 h-5" />
             <span>Logout</span>
-          </button>
+          </Link>
         </div>
       </motion.nav>
 
@@ -66,11 +71,4 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         className="fixed bottom-6 right-6"
       >
         <button className="bg-primary hover:bg-primary-hover text-white p-4 rounded-full shadow-lg transition-colors">
-          <MessageCircle className="w-6 h-6" />
-        </button>
-      </motion.div>
-    </div>
-  );
-};
-
-export default Layout;
+          <MessageCircle className="w-6 
