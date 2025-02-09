@@ -1,8 +1,8 @@
-
 import { motion } from 'framer-motion';
 import Layout from '@/components/Layout';
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { CheckCircle, Clock, Target, TrendingUp, ArrowUp, ArrowDown } from 'lucide-react';
+import { cn } from "@/lib/utils";
 
 const stats = [
   {
