@@ -71,4 +71,11 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         className="fixed bottom-6 right-6"
       >
         <button className="bg-primary hover:bg-primary-hover text-white p-4 rounded-full shadow-lg transition-colors">
-          <MessageCircle className="w-6 
+          <MessageCircle className="w-6 h-6" />
+        </button>
+      </motion.div>
+    </div>
+  );
+};
+
+export default Layout;
